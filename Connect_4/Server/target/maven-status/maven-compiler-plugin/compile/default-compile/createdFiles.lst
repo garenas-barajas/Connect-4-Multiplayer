@@ -1,0 +1,4 @@
+edu/uic/cs342/server/Connect4Board.class
+edu/uic/cs342/server/Connect4Server.class
+edu/uic/cs342/server/GameSession.class
+edu/uic/cs342/server/ServerGUI.class

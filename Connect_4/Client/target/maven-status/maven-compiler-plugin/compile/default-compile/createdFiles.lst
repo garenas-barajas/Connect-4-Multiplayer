@@ -1,0 +1,7 @@
+edu/uic/cs342/client/LoginScene.class
+edu/uic/cs342/client/ClientConnection.class
+edu/uic/cs342/client/MessageScene.class
+edu/uic/cs342/client/GameScene.class
+edu/uic/cs342/client/LobbyScene.class
+edu/uic/cs342/client/ClientMain.class
+edu/uic/cs342/client/GameOverScene.class

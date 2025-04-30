@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.uic.cs342</groupId>
+  <artifactId>connect4-client</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
+    <javafx.version>21</javafx.version>
+    <!-- On Apple Silicon, pick the aarch64 natives -->
+    <javafx.platform>mac-aarch64</javafx.platform>
+    <exec.mainClass>edu.uic.cs342.client.ClientMain</exec.mainClass>
+  </properties>
+
+  <dependencies>
+    <!-- JavaFX modules with the right native classifier -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
+      <classifier>${javafx.platform}</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>${javafx.version}</version>
+      <classifier>${javafx.platform}</classifier>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- use modern compiler -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>${maven.compiler.release}</release>
+        </configuration>
+      </plugin>
+
+      <!-- JavaFX launcher -->
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <mainClass>${exec.mainClass}</mainClass>
+          <launcher>app</launcher>
+          <platform>${javafx.platform}</platform>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
